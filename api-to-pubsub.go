@@ -39,12 +39,18 @@ func fetchAndForward(url string, method string, authToken string) error {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    fetchAndForward("https://api.co2signal.com/v1/latest?lon=-122.403171&lat=37.758218", "", "")
+    fetchAndForward(os.Getenv("URL"), os.Getenv("METHOD"), os.Getenv("AUTH_TOKEN"))
     fmt.Fprintf(w, "Done")
 }
 
 func main() {
-	log.Printf("%s started.", friendlyPackageName)
+    log.Printf("%s started.", friendlyPackageName)
+    
+    url := os.Getenv("URL")
+	if url == "" {
+        log.Fatal("URL environment variable is not set")
+        return
+	}
 
 	http.HandleFunc("/", handler)
 
