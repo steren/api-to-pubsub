@@ -1,0 +1,24 @@
+{
+    "env": {
+        "URL": {
+            "description": "the URL to fetch",
+            "required": true
+        },
+        "METHOD": {
+            "description": "the HTTP method to use",
+            "value": "GET",
+            "required": false
+        },
+        "AUTH_TOKEN": {
+            "description": "Any `auth-token` header to add to the request",
+            "required": false
+        },
+        "TOPIC": {
+            "description": "The ID of the PubSub topc to publish to (e.g. `my-topic`)",
+            "required": true
+        }
+    },
+    "options": {
+        "allow-unauthenticated": false
+    }
+}
