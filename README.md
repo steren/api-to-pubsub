@@ -9,6 +9,8 @@ Web service that fetches a given URL and forwards the response to a Google Cloud
 
 ## Configure
 
+Environment variables:
+
 - `URL` (Required): the URL to fetch
 - `METHOD` (Optional, default to "GET"): the HTTP method to use
 - `AUTH_TOKEN` (Optional, defaults to ""): Any `auth-token` header to add to the request
